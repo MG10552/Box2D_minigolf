@@ -1,0 +1,130 @@
+﻿Build started 2015-06-24 19:53:05.
+     1>Project "\\gda-nas\s10462\windows\desktop\Minigolf\PJATK_Box2D\PJATK_Box2D_vs2010.vcxproj" on node 2 (build target(s)).
+       Project file contains ToolsVersion="12.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+     1>InitializeBuildStatus:
+         Creating "_Debug\Minigolf.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"\\gda-nas\s10462\windows\desktop\Minigolf\PJATK_Box2D\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /D _ /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"_Debug\\" /Fd"_Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\game.cpp
+         game.cpp
+     1>\\gda-nas\s10462\windows\desktop\minigolf\pjatk_box2d\src\game.cpp(115): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>\\gda-nas\s10462\windows\desktop\minigolf\pjatk_box2d\src\game.cpp(115): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\gda-nas\s10462\windows\desktop\Minigolf\_Debug\Minigolf.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"_Debug\Minigolf.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"\\gda-nas\s10462\windows\desktop\Minigolf\_Debug\Minigolf.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\gda-nas\s10462\windows\desktop\Minigolf\_Debug\Minigolf.lib" /MACHINE:X86 _Debug\Minigolf.exe.embed.manifest.res
+         _Debug\b2BroadPhase.obj
+         _Debug\b2CollideCircle.obj
+         _Debug\b2CollideEdge.obj
+         _Debug\b2CollidePolygon.obj
+         _Debug\b2Collision.obj
+         _Debug\b2Distance.obj
+         _Debug\b2DynamicTree.obj
+         _Debug\b2TimeOfImpact.obj
+         _Debug\b2ChainShape.obj
+         _Debug\b2CircleShape.obj
+         _Debug\b2EdgeShape.obj
+         _Debug\b2PolygonShape.obj
+         _Debug\b2BlockAllocator.obj
+         _Debug\b2Draw.obj
+         _Debug\b2Math.obj
+         _Debug\b2Settings.obj
+         _Debug\b2StackAllocator.obj
+         _Debug\b2Timer.obj
+         _Debug\b2Body.obj
+         _Debug\b2ContactManager.obj
+         _Debug\b2Fixture.obj
+         _Debug\b2Island.obj
+         _Debug\b2World.obj
+         _Debug\b2WorldCallbacks.obj
+         _Debug\b2ChainAndCircleContact.obj
+         _Debug\b2ChainAndPolygonContact.obj
+         _Debug\b2CircleContact.obj
+         _Debug\b2Contact.obj
+         _Debug\b2ContactSolver.obj
+         _Debug\b2EdgeAndCircleContact.obj
+         _Debug\b2EdgeAndPolygonContact.obj
+         _Debug\b2PolygonAndCircleContact.obj
+         _Debug\b2PolygonContact.obj
+         _Debug\b2DistanceJoint.obj
+         _Debug\b2FrictionJoint.obj
+         _Debug\b2GearJoint.obj
+         _Debug\b2Joint.obj
+         _Debug\b2MotorJoint.obj
+         _Debug\b2MouseJoint.obj
+         _Debug\b2PrismaticJoint.obj
+         _Debug\b2PulleyJoint.obj
+         _Debug\b2RevoluteJoint.obj
+         _Debug\b2RopeJoint.obj
+         _Debug\b2WeldJoint.obj
+         _Debug\b2WheelJoint.obj
+         _Debug\b2Rope.obj
+         _Debug\bpilat.obj
+         _Debug\game.obj
+         _Debug\mglodowski.obj
+         _Debug\misc.obj
+         _Debug\window.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"_Debug\Minigolf.exe.embed.manifest" /manifest _Debug\Minigolf.exe.intermediate.manifest
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\gda-nas\s10462\windows\desktop\Minigolf\_Debug\Minigolf.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"_Debug\Minigolf.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"\\gda-nas\s10462\windows\desktop\Minigolf\_Debug\Minigolf.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\gda-nas\s10462\windows\desktop\Minigolf\_Debug\Minigolf.lib" /MACHINE:X86 _Debug\Minigolf.exe.embed.manifest.res
+         _Debug\b2BroadPhase.obj
+         _Debug\b2CollideCircle.obj
+         _Debug\b2CollideEdge.obj
+         _Debug\b2CollidePolygon.obj
+         _Debug\b2Collision.obj
+         _Debug\b2Distance.obj
+         _Debug\b2DynamicTree.obj
+         _Debug\b2TimeOfImpact.obj
+         _Debug\b2ChainShape.obj
+         _Debug\b2CircleShape.obj
+         _Debug\b2EdgeShape.obj
+         _Debug\b2PolygonShape.obj
+         _Debug\b2BlockAllocator.obj
+         _Debug\b2Draw.obj
+         _Debug\b2Math.obj
+         _Debug\b2Settings.obj
+         _Debug\b2StackAllocator.obj
+         _Debug\b2Timer.obj
+         _Debug\b2Body.obj
+         _Debug\b2ContactManager.obj
+         _Debug\b2Fixture.obj
+         _Debug\b2Island.obj
+         _Debug\b2World.obj
+         _Debug\b2WorldCallbacks.obj
+         _Debug\b2ChainAndCircleContact.obj
+         _Debug\b2ChainAndPolygonContact.obj
+         _Debug\b2CircleContact.obj
+         _Debug\b2Contact.obj
+         _Debug\b2ContactSolver.obj
+         _Debug\b2EdgeAndCircleContact.obj
+         _Debug\b2EdgeAndPolygonContact.obj
+         _Debug\b2PolygonAndCircleContact.obj
+         _Debug\b2PolygonContact.obj
+         _Debug\b2DistanceJoint.obj
+         _Debug\b2FrictionJoint.obj
+         _Debug\b2GearJoint.obj
+         _Debug\b2Joint.obj
+         _Debug\b2MotorJoint.obj
+         _Debug\b2MouseJoint.obj
+         _Debug\b2PrismaticJoint.obj
+         _Debug\b2PulleyJoint.obj
+         _Debug\b2RevoluteJoint.obj
+         _Debug\b2RopeJoint.obj
+         _Debug\b2WeldJoint.obj
+         _Debug\b2WheelJoint.obj
+         _Debug\b2Rope.obj
+         _Debug\bpilat.obj
+         _Debug\game.obj
+         _Debug\mglodowski.obj
+         _Debug\misc.obj
+         _Debug\window.obj
+         PJATK_Box2D_vs2010.vcxproj -> \\gda-nas\s10462\windows\desktop\Minigolf\_Debug\Minigolf.exe
+       FinalizeBuildStatus:
+         Deleting file "_Debug\Minigolf.unsuccessfulbuild".
+         Touching "_Debug\Minigolf.lastbuildstate".
+     1>Done Building Project "\\gda-nas\s10462\windows\desktop\Minigolf\PJATK_Box2D\PJATK_Box2D_vs2010.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:07.23
