@@ -1,8 +1,10 @@
 #include <Windows.h>
 #include <gl/GL.h>
-#include "box2d/Box2D.h"
+#include "box2D/Box2D.h"
 #include "misc.h"
 #include "game.h"
+#include "cmath"
+
 
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
