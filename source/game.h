@@ -1,172 +1,163 @@
 #pragma once
-
 #include "box2D\Box2D.h"
 
-struct Object
-{
-    b2Body*     body;
-    Mesh*       mesh;
-    int         lifetime;
-    int         color;
-    Object() : body(NULL),mesh(NULL), lifetime(0)
-    {
 
-    }
+struct Object {
+	b2Body* body;
+	Mesh* mesh;
+	int lifetime;
+	int color;
+	Object(): body(NULL), mesh(NULL), lifetime(0) { }
 };
 
-struct Filters
-{
-  enum Bits
-  {
-	  Bit_None = 0,
-	  Bit_Boundary = 1,
-	  Bit_Ball = 2,
-	  Bit_Wall_Obstacle = 4,
-	  Bit_Sensor_Obstacle = 8,
-      Bit_Water = 16,
-      Bit_Particle = 32,
-	  Bit_Exit = 64
-  };
+struct Filters {
+	enum Bits {
+		Bit_None = 0,
+		Bit_Boundary = 1,
+		Bit_Ball = 2,
+		Bit_Wall_Obstacle = 4,
+		Bit_Sensor_Obstacle = 8,
+		Bit_Water = 16,
+		Bit_Particle = 32,
+		Bit_Exit = 64
+	};
 };
 
-class Game
-{
-    enum GameState{
-        Map1,
-        Map2
-    } gameState;
+class Game {
+	enum GameState {
+		Map1,
+		Map2
+	} gameState;
 
-    enum MapState{
+	enum MapState {
 		SubMap1 = 0,
 		SubMap2 = 1,
 		SubMap3 = 2
-	  } mapState;
+	} mapState;
 
-  int       timer;
-  float     win_dx;
-  float     win_dy;
-  float     scroll_x, scroll_y;
+	int timer;
+	float win_dx;
+	float win_dy;
+	float scroll_x, scroll_y;
 
-  //swiat
-  b2World*     b2world;
-  
-  
-  typedef std::vector<Object*>  stdv_objs;
+	// Swiat
+	b2World* b2world;
 
-  //nasza pi³eczka
-  Object    ball;
-  bool ballAtStartPos;
-  //line
-  bool  bdraw_line;
-  float vline_x[3], vline_y[3];
-  std::vector<b2Vec2> shootRay;
-  
-  //lista partikli
-  stdv_objs   vparts;
-  //textura
-  Texture     tex_0;
+	typedef std::vector<Object*>  stdv_objs;
 
-  void      createParticles(const b2Vec2& vpos, int parts_cnt);
-  void      userInput(const Input& in);
-  void      render();
+	// Nasza pi³eczka
+	Object ball;
+	bool ballAtStartPos;
+	
+	// Line
+	bool bdraw_line;
+	float vline_x[3], vline_y[3];
+	std::vector<b2Vec2> shootRay;
 
-  //bpilat.cpp
-  struct Map1
-  {
-	  // Czy pod³o¿e symulowaæ dampingiem pi³eczki?
-	  // Co gdy ró¿ne pi³eki maj¹ ró¿ny damping?
-	  // Co gdy dwa obiekty s¹ na sobie i oba wp³ywaj¹ na pi³eczkê? Priorytet?
+	// Lista partikli
+	stdv_objs vparts;
+	
+	// Textura
+	Texture tex_0;
 
-	  //linear damping dla pi³ki na poszczególnych submapach
-	  float ballDamping[3];
+	void createParticles(const b2Vec2& vpos, int parts_cnt);
+	void userInput(const Input& in);
+	void render();
 
-	  //punkty startowe dla pi³ki
-	  b2Vec2 start_points[3];
+	// Map outsourced to bpi.cpp
+	struct Map1 {
+		// Czy pod³o¿e symulowaæ dampingiem pi³eczki?
+		// Co gdy ró¿ne pi³eki maj¹ ró¿ny damping?
+		// Co gdy dwa obiekty s¹ na sobie i oba wp³ywaj¹ na pi³eczkê? Priorytet?
 
-      //pole gry
-	  Object boundary;
+		// Linear damping dla pi³ki na poszczególnych submapach
+		float ballDamping[3];
 
-	  //przeszkody 1 podmapy i do³ek
-	  Object sand_pit;
-	  Object bouncer;
-	  Object water;
-	  Object hole_1;
+		// Punkty startowe dla pi³ki
+		b2Vec2 start_points[3];
 
-	  //przeszkody 2 podmapy
-	  Object windmill_static; 
-      Object windmill_cross1;
-      Object windmill_cross2;
-	  Object hole_2;
+		// Pole gry
+		Object boundary;
 
-	  //przeszkody 3 podmapy
-	  Object force_field_1;
-	  Object force_field_2;
-	  Object force_field_3;
-      Object bouncer2;
-	  Object hole_3;
+		// Przeszkody 1 podmapy i do³ek
+		Object sand_pit;
+		Object bouncer;
+		Object water;
+		Object hole_1;
 
-	  Map1() { }
+		// Przeszkody 2 podmapy
+		Object windmill_static;
+		Object windmill_cross1;
+		Object windmill_cross2;
+		Object hole_2;
 
-  } map1;
+		//przeszkody 3 podmapy
+		Object force_field_1;
+		Object force_field_2;
+		Object force_field_3;
+		Object bouncer2;
+		Object hole_3;
 
-  void  createMap1(int window_x, int window_y);
-  //end bpilat.cpp
+		Map1() { }
 
-  //start of mglodowski.cpp
-  struct Map2
-  {
-	  //linear damping dla pi³ki na poszczególnych submapach
-	  float ballDamping[3];
+	} map1;
 
-	  //punkty startowe dla pi³ki
-	  b2Vec2 start_points[3];
+	void createMap1(int window_x, int window_y);
+	// End map of bpi.cpp
 
-	  //pole gry
-	  Object boundary;
+	//start of map from mgl.cpp
+	struct Map2 {
+		// Linear damping dla pi³ki na poszczególnych submapach
+		float ballDamping[3];
 
-	  //Objekty nale¿¹ce do pierwszej podmapy
-	  Object bouncingWall;
-	  Object bouncingWall2;
-	  Object bouncingWall3;
-	  Object bouncingWall4;
-	  Object bouncingWall5;
-	  Object gate_rightwing;
-	  Object gate_leftwing;
-	  Object waterF1;
-	  Object waterF2;
-	  Object hole_1;
-	  Object gate_static1;
-	  Object gate_static2;
+		// Punkty startowe dla pi³ki
+		b2Vec2 start_points[3];
 
-	  //Objekty nale¿¹ce do drugiej podmapy
-	  Object bouncer;
-	  Object bouncer2;
-	  Object bouncer3;
-	  Object bouncer4;
-	  Object bouncer5;
-	  Object hole_2;
+		// Pole gry
+		Object boundary;
 
-	  //Objekty nale¿¹ce do trzeciej podmapy
-	  Object waterF3;
-	  Object hole_3;
+		// Objekty nale¿¹ce do pierwszej podmapy
+		Object bouncingWall;
+		Object bouncingWall2;
+		Object bouncingWall3;
+		Object bouncingWall4;
+		Object bouncingWall5;
+		Object gate_rightwing;
+		Object gate_leftwing;
+		Object waterF1;
+		Object waterF2;
+		Object hole_1;
+		Object gate_static1;
+		Object gate_static2;
+		
+		// Objekty nale¿¹ce do drugiej podmapy
+		Object bouncer;
+		Object bouncer2;
+		Object bouncer3;
+		Object bouncer4;
+		Object bouncer5;
+		Object hole_2;
 
-	  Map2() { }
+		// Objekty nale¿¹ce do trzeciej podmapy
+		Object waterF3;
+		Object hole_3;
 
-  } map2;
+		Map2() { }
 
-  void  createMap2(int window_x, int window_y);
-  //end of mglodowski.cpp
+	} map2;
 
-  //common
-  void CreateBall();
-  void moveBallAtPos(b2Vec2 pos);
-  void shootRayCast(b2Vec2 v1, b2Vec2 v2, int bounces);
-  //end of common
+	void createMap2(int window_x, int window_y);
+	// End of map from mgl.cpp
 
+	// Common
+	void CreateBall();
+	void moveBallAtPos(b2Vec2 pos);
+	void shootRayCast(b2Vec2 v1, b2Vec2 v2, int bounces);
+	// End of common
 
-public:
-  Game() : win_dx(0), win_dy(0){}
-  void      create(int win_size_x, int win_size_y);
-  void      destroy();
-  void      process(const Input& in);
+	public:
+		Game(): win_dx(0), win_dy(0) {}
+		void create(int win_size_x, int win_size_y);
+		void destroy();
+		void process(const Input& in);
 };
